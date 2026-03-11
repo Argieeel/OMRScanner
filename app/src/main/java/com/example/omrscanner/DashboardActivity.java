@@ -131,6 +131,7 @@ public class DashboardActivity extends AppCompatActivity {
     // Views
     private ImageButton btnBack;
     private ImageButton btnUpload;
+    private TextView btnLogout;
     private TextView topBarTitle, topBarBadge;
     private TextView tvTeacherName;
     private LinearLayout teacherNameRow;
@@ -257,6 +258,7 @@ public class DashboardActivity extends AppCompatActivity {
     private void initViews() {
         btnBack = findViewById(R.id.btnBack);
         btnUpload = findViewById(R.id.btnUpload);
+        btnLogout = findViewById(R.id.btnLogout);
         topBarTitle = findViewById(R.id.topBarTitle);
         topBarBadge = findViewById(R.id.topBarBadge);
         tvTeacherName = findViewById(R.id.tvTeacherName);
@@ -304,6 +306,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         btnBack.setOnClickListener(v -> navigateBack());
         btnUpload.setOnClickListener(v -> showGlobalUploadClassDialog());
+        btnLogout.setOnClickListener(v -> showLogoutConfirmation());
         fab.setOnClickListener(v -> onFabClicked());
 
         // Teacher name row click → edit dialog
@@ -557,6 +560,25 @@ public class DashboardActivity extends AppCompatActivity {
                 showNewActivityDialog();
                 break;
         }
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // LOGOUT
+    // ═══════════════════════════════════════════════════════════════
+
+    private void showLogoutConfirmation() {
+        new AlertDialog.Builder(this)
+                .setTitle("Log Out")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Log Out", (dialog, which) -> {
+                    Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    finish();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
     // ═══════════════════════════════════════════════════════════════

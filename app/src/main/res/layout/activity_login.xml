@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loginRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login_screen">
+
+    <!-- ── LOGIN CARD ── -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.42">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="18dp">
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/loginLogo"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="false"
+                android:src="@drawable/stars_logo_login"
+                android:contentDescription="STARS logo"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="2dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/loginSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="20dp"
+                android:text="Students Test Analysis Record System"
+                android:textColor="#1D4ED8"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:textStyle="bold" />
+
+            <!-- Username field -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_login_input"
+                    android:hint="Username"
+                    android:textColorHint="#9CA3AF"
+                    android:textColor="#111827"
+                    android:textSize="14sp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="48dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:importantForAutofill="no" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ic_users"
+                    android:alpha="0.45"
+                    android:contentDescription="User icon" />
+            </FrameLayout>
+
+            <!-- Password field -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_login_input"
+                    android:hint="Password"
+                    android:textColorHint="#9CA3AF"
+                    android:textColor="#111827"
+                    android:textSize="14sp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="48dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:importantForAutofill="no" />
+
+                <ImageView
+                    android:id="@+id/ivPasswordToggle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ic_eye_outline"
+                    android:alpha="0.45"
+                    android:contentDescription="Toggle password visibility"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </FrameLayout>
+
+            <!-- Sign In Button -->
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_login_button"
+                android:text="Sign In"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.05"
+                android:stateListAnimator="@null" />
+
+            <!-- Error text (hidden by default) -->
+            <TextView
+                android:id="@+id/tvLoginError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="#DC2626"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Small star badge top-left of card for decoration -->
+    <ImageView
+        android:id="@+id/loginStarBadge"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/star_plain_foreground"
+        android:contentDescription="Star badge"
+        android:alpha="0.12"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/loginStarBadge2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@mipmap/star_plain_foreground"
+        android:contentDescription="Star badge 2"
+        android:alpha="0.10"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Version text at bottom -->
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0.0"
+        android:textColor="#9CA3AF"
+        android:textSize="11sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
