@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_header_gradient">
+
+    <!-- ── DECORATIVE CIRCLES (floating bubbles, same as dashboard) ── -->
+
+    <!-- Large circle — top-end -->
+    <View
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="-60dp"
+        android:layout_marginEnd="-60dp"
+        android:alpha="0.08"
+        android:background="@drawable/shape_circle_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Medium circle — top-start -->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="80dp"
+        android:alpha="0.06"
+        android:background="@drawable/shape_circle_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Small circle — mid-end -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="24dp"
+        android:alpha="0.07"
+        android:background="@drawable/shape_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <!-- Large circle — bottom-start -->
+    <View
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="-30dp"
+        android:layout_marginBottom="-50dp"
+        android:alpha="0.06"
+        android:background="@drawable/shape_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Small circle — bottom-end -->
+    <View
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginBottom="60dp"
+        android:alpha="0.05"
+        android:background="@drawable/shape_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── LOCK ICON BADGE (above card) ── -->
+
+    <!-- ── LOGIN TITLE & SUBTITLE (above card, below badge) ── -->
+    <!-- These are inside the card for cleaner layout -->
+
+    <!-- ── LOGIN CARD ── -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="52dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="28dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Login Required"
+                android:textColor="#1E293B"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="28dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Please authenticate to upload your file"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- Email label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Email"
+                android:textColor="#1E293B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Username/Email field -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/input_modern_bg"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Enter your email"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="46dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="#111827"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="14dp"
+                    android:alpha="0.40"
+                    android:contentDescription="Email icon"
+                    android:src="@drawable/ic_users" />
+            </FrameLayout>
+
+            <!-- Password label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Password"
+                android:textColor="#1E293B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Password field -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/input_modern_bg"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Enter your password"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingStart="46dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="48dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="#111827"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="14sp" />
+
+                <!-- Lock icon left -->
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="14dp"
+                    android:alpha="0.40"
+                    android:contentDescription="Password icon"
+                    android:src="@drawable/lock" />
+
+                <!-- Eye toggle right -->
+                <ImageView
+                    android:id="@+id/ivPasswordToggle"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:alpha="0.40"
+                    android:clickable="true"
+                    android:contentDescription="Toggle password visibility"
+                    android:focusable="true"
+                    android:src="@drawable/ic_eye_outline" />
+            </FrameLayout>
+
+            <!-- Login & Upload Button (pill style) -->
+
+            <!-- Error text (hidden by default) -->
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/gradient_start"
+                android:drawableTint="@color/gradient_start"
+                android:fontFamily="@font/poppins_bold"
+                android:foregroundTint="@color/gradient_start"
+                android:letterSpacing="0.02"
+                android:stateListAnimator="@null"
+                android:text="Login"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:iconTint="@color/gradient_start" />
+
+            <TextView
+                android:id="@+id/tvLoginError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#DC2626"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- Forgot password link -->
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Forgot password?"
+                android:textColor="#3730A3"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ── CLOSE BUTTON (top-right) ── -->
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.70"
+        android:background="@drawable/bg_icon_circle_white"
+        android:contentDescription="Close"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#FFFFFF" />
+
+    <!-- ── COPYRIGHT FOOTER ── -->
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="© 2026 File Upload System"
+        android:textColor="#CCFFFFFF"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

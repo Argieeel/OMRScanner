@@ -11,4 +11,12 @@
     <color name="error_red">#F44336</color>
     <color name="green">#4CAF50</color>
     <color name="yellow">#FFC107</color>
+
+    <!-- Header / page gradient colors -->
+    <color name="gradient_start">#3B5BDB</color>
+    <color name="gradient_end">#1D4ED8</color>
+
+    <!-- Darker pressed state for buttons -->
+    <color name="gradient_pressed">#1D40AF</color>
+
 </resources>

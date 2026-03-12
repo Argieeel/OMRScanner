@@ -74,7 +74,7 @@
                 android:gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toEndOf="@id/headerLogo"
-                app:layout_constraintEnd_toStartOf="@id/btnUpload"
+                app:layout_constraintEnd_toStartOf="@id/headerEndButtons"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
 
@@ -129,20 +129,49 @@
 
             </LinearLayout>
 
-            <!-- Upload button — smaller (was 44dp → now 38dp) -->
-            <ImageButton
-                android:id="@+id/btnUpload"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:src="@drawable/ic_upload"
-                android:contentDescription="Upload"
-                android:background="@drawable/bg_icon_circle_white"
-                android:padding="8dp"
-                android:elevation="2dp"
-                app:tint="#FFFFFF"
+            <!-- Upload + Logout button group -->
+            <LinearLayout
+                android:id="@+id/headerEndButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <!-- Upload button -->
+                <ImageButton
+                    android:id="@+id/btnUpload"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_upload"
+                    android:contentDescription="Upload"
+                    android:background="@drawable/bg_icon_circle_white"
+                    android:padding="8dp"
+                    android:elevation="2dp"
+                    app:tint="#FFFFFF" />
+
+                <!-- Logout text button -->
+                <TextView
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Log Out"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.04"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/bg_logout_pill"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

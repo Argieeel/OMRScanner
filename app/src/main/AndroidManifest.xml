@@ -23,6 +23,7 @@
             android:label="LRN Error"
             android:theme="@style/Theme.OMRScanner" />
         <activity android:name=".camera.CameraActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".DashboardActivity"/>
 
         <activity

@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        // Delay for 2.5 seconds (2500 milliseconds)
+        // Delay for 1.5 seconds then go to Login
         new android.os.Handler().postDelayed(() -> {
-            // Navigate to Dashboard activity
-            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }, 1500);
     }
