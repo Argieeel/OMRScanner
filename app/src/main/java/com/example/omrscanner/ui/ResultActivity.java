@@ -67,6 +67,7 @@ public class ResultActivity extends AppCompatActivity {
     private String classId;
     private String activityId;
     private String imageSource;
+    private boolean fixedMountMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,7 @@ public class ResultActivity extends AppCompatActivity {
         classId = getIntent().getStringExtra(DashboardActivity.EXTRA_CLASS_ID);
         activityId = getIntent().getStringExtra(DashboardActivity.EXTRA_ACTIVITY_ID);
         imageSource = getIntent().getStringExtra(PreviewActivity.IMAGE_SOURCE);
+        fixedMountMode = getIntent().getBooleanExtra(CameraActivity.EXTRA_FIXED_MOUNT_MODE, false);
 
         Log.d(TAG, "Received sheet type: " + selectedSheetType + ", classId: " + classId + ", activityId: " + activityId);
 
@@ -174,6 +176,7 @@ public class ResultActivity extends AppCompatActivity {
             if (activityId != null) {
                 intent.putExtra(DashboardActivity.EXTRA_ACTIVITY_ID, activityId);
             }
+            intent.putExtra(CameraActivity.EXTRA_FIXED_MOUNT_MODE, fixedMountMode);
             startActivity(intent);
             finish();
         }
